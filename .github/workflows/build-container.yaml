@@ -16,9 +16,6 @@ jobs:
     defaults:
       run:
         shell: bash
-        env:
-          WIZ_CLIENT_ID: ${{ secrets.WIZ_CLIENT_ID }}
-          WIZ_CLIENT_SECRET: ${{ secrets.WIZ_CLIENT_SECRET }}
 
     steps:
       - name: Checkout
@@ -32,6 +29,9 @@ jobs:
 
       - name: authenticate to wiz
         run: ./wizcli auth --id $WIZ_CLIENT_ID --secret $WIZ_CLIENT_SECRET
+        env:
+          WIZ_CLIENT_ID: ${{ secrets.WIZ_CLIENT_ID }}
+          WIZ_CLIENT_SECRET: ${{ secrets.WIZ_CLIENT_SECRET }}
 
       - name: Scan with Wiz-cli
         run: ./wizcli docker scan --image ghcr.io/arya-huma/simpleapp:0.5 --policy "$POLICY"
