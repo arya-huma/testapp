@@ -1,4 +1,4 @@
-name: Build and push Docker image
+name: Build image
 
 on:
   push:
@@ -22,15 +22,3 @@ jobs:
 
       - name: Build Docker image
         run: make app/build-docker
-        
-      - name: Download Wiz-cli
-        run: curl -o wizcli https://wizcli.app.wiz.io/wizcli && chmod +x wizcli
-        
-      - name: Authenticate to Wiz
-        run: ./wizcli auth --id "$WIZ_CLIENT_ID" 00secret "$WIZ_CLIENT_SECRET"
-        env:
-          WIZ_CLIENT_ID: ${{ secrets.WIZ_CLIENT_ID }}
-          WIZ_CLIENT_SECRET: ${{ secrets.WIZ_CLIENT_SECRET }}
-      
-      - name: Run Wiz-cli scan
-        run: ./wizcli docker scan --image 
