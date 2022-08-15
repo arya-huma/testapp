@@ -1,4 +1,4 @@
-IMAGE ?= "4ry4/simpleapp:0.5"
+IMAGE ?= "simpleapp:0.5"
 
 app/setup-venv:
 	@echo '+ Setting up venv'
