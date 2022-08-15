@@ -23,8 +23,12 @@ jobs:
 
       - name: Build Docker image
         run: make app/build-docker
+<<<<<<< HEAD
         
       - name: Scan with Wiz-cli
         run: ./wizcli docker scan --image ghcr.io/arya-huma/simpleapp:0.5 --policy "$POLICY"
 
     # Comment to trigger scan
+=======
+# comment to trigger scan
+>>>>>>> 5e4f4616979b7188634bc1501f3bfee7e9693034
