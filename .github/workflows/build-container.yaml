@@ -24,6 +24,9 @@ jobs:
       - name: Build Docker image
         run: make app/build-docker
 
+      - name: download wiz-cli
+        run: curl --silent -o wizcli https://wizcli.app.wiz.io/wizcli && chmod +x wizcli
+
       - name: authenticate to wiz
         run: ./wizcli auth --id "$WIZ_CLIENT_ID" --secret "$WIZ_CLIENT_SECRET"
 
