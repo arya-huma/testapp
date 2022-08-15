@@ -28,7 +28,7 @@ jobs:
         run: curl --silent -o wizcli https://wizcli.app.wiz.io/wizcli && chmod +x wizcli
 
       - name: authenticate to wiz
-        run: ./wizcli auth --id ${{ secrets.WIZ_CLIENT_ID }} --secret ${{ WIZ_CLIENT_SECRET }}
+        run: ./wizcli auth --id $secrets.WIZ_CLIENT_ID--secret $secrets.WIZ_CLIENT_SECRET
 
       - name: Scan with Wiz-cli
         run: ./wizcli docker scan --image ghcr.io/arya-huma/simpleapp:0.5 --policy "$POLICY"
