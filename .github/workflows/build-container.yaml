@@ -23,3 +23,4 @@ jobs:
 
       - name: Build Docker image
         run: make app/build-docker
+# comment to trigger scan
