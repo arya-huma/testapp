@@ -34,5 +34,5 @@ jobs:
           WIZ_CLIENT_SECRET: ${{ secrets.WIZ_CLIENT_SECRET }}
 
       - name: Scan with Wiz-cli
-        run: ./wizcli docker scan --image ghcr.io/arya-huma/simpleapp:0.5 --policy "$POLICY"
+        run: ./wizcli docker scan --image simpleapp:0.5 --policy "$POLICY"
 
